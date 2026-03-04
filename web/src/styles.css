@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* FarmersMark Brand Palette */
+  --color-primary: #16a34a;        /* Vibrant crop green */
+  --color-primary-strong: #15803d; /* Darker green for button hover states */
+  --color-accent-cream: #fefce8;   /* Soft warm background */
+  --color-muted: #6b7280;          /* Gray for subtle secondary text */
+  --color-danger: #dc2626;         /* Red for error messages */
+}
