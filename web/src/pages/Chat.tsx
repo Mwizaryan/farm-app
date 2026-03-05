@@ -250,10 +250,6 @@ export const ChatPage: React.FC = () => {
             Powered by your farm documents
           </p>
         </div>
-        <div className="ml-auto flex items-center gap-2 text-xs font-bold text-green-600 bg-green-50 border border-green-200 px-3 py-1.5 rounded-full">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          Connected to Emulator
-        </div>
       </div>
 
       {/* Message List */}
