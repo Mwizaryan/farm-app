@@ -85,11 +85,11 @@ def analyzeDocument(req: https_fn.CallableRequest):
             return {"answer": "I'm sorry, but I couldn't find any relevant information regarding that in the official compliance documents."}
 
         # =====================================================================
-        # 2. GENERATION STEP: Call Gemini 2.0 Flash to formulate the answer
+        # 2. GENERATION STEP: Call Gemini 2.5 Flash to formulate the answer
         # =====================================================================
         prompt = f"""
-        You are an expert agricultural assistant. Answer the user's question based STRICTLY on the retrieved context provided below.
-        If the answer is not in the context, say that you don't know based on the available information.
+        You are an expert agricultural assistant. Answer the user's question based on the retrieved context provided below and be as friendly as possible.
+        If the answer is not in the context, say that you can not help on the current question. use  your general knowledge to answer the any question that you don't know.
 
         Context:
         {retrieved_text}
@@ -103,7 +103,7 @@ def analyzeDocument(req: https_fn.CallableRequest):
             model="gemini-2.5-flash", 
             contents=prompt,
             config=types.GenerateContentConfig(
-                temperature=0.3,
+                temperature=0.7,
                 max_output_tokens=8192,
             )
         )
